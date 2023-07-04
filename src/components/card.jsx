@@ -14,7 +14,6 @@ function card({ id }) {
         },
       })
       .then((response) => {
-        console.log(response.data);
         savePokemonDetails(response.data);
       })
       .catch((error) => {
@@ -27,6 +26,11 @@ function card({ id }) {
       name: data.name,
       sprite: data.sprites.front_default,
       order: data.order,
+      types: [
+        ...data.types.map((pokeType) => {
+          return pokeType.type.name;
+        }),
+      ],
     });
   };
 
@@ -34,11 +38,13 @@ function card({ id }) {
     <div>
       <p>{pokemon.name}</p>
       <p>{pokemon.order}</p>
+      <p>{pokemon.types}</p>
       <img src={pokemon.sprite} alt={pokemon.name} />
     </div>
   );
 }
 
-card.propTypes = {};
+card.propTypes = { id: PropTypes.number };
+card.defaultProps = { id: 1 };
 
 export default card;
