@@ -5,6 +5,7 @@ import axios from 'axios';
 function card({ id }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
   const [pokemon, setPokemon] = useState({});
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     axios
@@ -19,28 +20,31 @@ function card({ id }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   const savePokemonDetails = (data) => {
     setPokemon({
       name: data.name,
       sprite: data.sprites.front_default,
-      order: data.order,
       types: [
         ...data.types.map((pokeType) => {
           return pokeType.type.name;
         }),
       ],
     });
+    setLoaded(true);
   };
 
   return (
-    <div>
-      <p>{pokemon.name}</p>
-      <p>{pokemon.order}</p>
-      <p>{pokemon.types}</p>
-      <img src={pokemon.sprite} alt={pokemon.name} />
-    </div>
+    loaded && (
+      <div>
+        <p>{pokemon.name}</p>
+        {pokemon.types.map((type) => {
+          return <p>{type}</p>;
+        })}
+        <img src={pokemon.sprite} alt={pokemon.name} />
+      </div>
+    )
   );
 }
 
