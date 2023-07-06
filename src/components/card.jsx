@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import '../styles/m-card/m-card.css';
 
 function card({ id }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
@@ -37,11 +38,13 @@ function card({ id }) {
 
   return (
     loaded && (
-      <div>
+      <div className="m-card">
         <p>{pokemon.name}</p>
-        {pokemon.types.map((type) => {
-          return <p>{type}</p>;
-        })}
+        <div>
+          {pokemon.types.map((type) => {
+            return <p>{type}</p>;
+          })}
+        </div>
         <img src={pokemon.sprite} alt={pokemon.name} />
       </div>
     )

@@ -1,0 +1,35 @@
+.m-card {
+  border-radius: 0.5rem;
+  box-shadow: 14px 12px 45px -35px rgba(0, 0, 0, 0.21);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.7rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: rgb(240, 240, 240);
+
+  & p {
+    margin: 0;
+    padding: 0;
+  }
+
+  & > div {
+    display: flex;
+
+    & > p:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+
+    & > p {
+      border-radius: 2rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 0.3rem 1rem;
+    }
+  }
+
+  & img {
+    width: 7rem;
+    height: 7rem;
+    align-self: center;
+  }
+}
