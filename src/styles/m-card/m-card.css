@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
 .m-card {
   border-radius: 0.5rem;
   box-shadow: 14px 12px 45px -35px rgba(0, 0, 0, 0.21);
@@ -7,13 +9,19 @@
   width: 10rem;
   height: 10rem;
   background-color: rgb(240, 240, 240);
+  font-family: 'Montserrat';
+  transition-duration: 200ms;
+  cursor: pointer;
 
   & p {
     margin: 0;
     padding: 0;
+    text-transform: capitalize;
   }
 
   & > div {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
     display: flex;
 
     & > p:not(:first-child) {
@@ -31,5 +39,9 @@
     width: 7rem;
     height: 7rem;
     align-self: center;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
