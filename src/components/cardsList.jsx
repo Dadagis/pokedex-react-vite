@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import Card from './card';
 
 function cardsList() {
@@ -22,11 +21,13 @@ function cardsList() {
     setPage((prevPage) => (increment ? prevPage + 1 : prevPage - 1));
   };
 
+  const displayCards = () => {
+    return ids.map((index) => <Card key={index} id={index + 1} />);
+  };
+
   return (
     <div>
-      {ids.map((index) => (
-        <Card id={index + 1} />
-      ))}
+      {displayCards()}
       <button onClick={() => updatePage()}>+</button>
       <button onClick={() => updatePage(false)}>-</button>
       {page}
