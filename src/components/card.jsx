@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import '../styles/m-card/m-card.css';
+import LabelPill from './labelPill';
 
 function card({ id }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
@@ -36,15 +37,17 @@ function card({ id }) {
     setLoaded(true);
   };
 
+  const displayTypes = () => {
+    return pokemon.types.map((type) => {
+      return <LabelPill type={type} />;
+    });
+  };
+
   return (
     loaded && (
       <div className="m-card">
         <p>{pokemon.name}</p>
-        <div>
-          {pokemon.types.map((type) => {
-            return <p>{type}</p>;
-          })}
-        </div>
+        <div>{displayTypes()}</div>
         <img src={pokemon.sprite} alt={pokemon.name} />
       </div>
     )

@@ -1,0 +1,11 @@
+.a-labelPill {
+  margin: 0;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.3rem 1rem;
+
+  &:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+}
