@@ -39,7 +39,6 @@ function card({ id, index }) {
   };
 
   const displayTypes = () => {
-    console.log(pokemon.types.first);
     return pokemon.types.map((type, index) => {
       return <LabelPill key={index} type={type} />;
     });

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Card from './card.1';
+import Card from './card';
 
 function cardsList() {
   const [page, setPage] = useState(1);
