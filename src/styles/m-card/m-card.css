@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
 .m-card {
   border-radius: 0.5rem;
   box-shadow: 14px 12px 45px -35px rgba(0, 0, 0, 0.21);
@@ -9,17 +7,8 @@
   width: 12rem;
   height: 12rem;
   background-color: rgb(200, 200, 200);
-  font-family: 'Montserrat';
   transition-duration: 200ms;
   cursor: pointer;
-
-  & > p {
-    margin: 0;
-    padding: 0;
-    text-transform: capitalize;
-    color: white;
-    font-weight: 700;
-  }
 
   & > div {
     font-size: 0.8rem;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import '../styles/m-card/m-card.css';
+import '../styles/a-text/a-text.css';
 import LabelPill from './labelPill';
 
 function card({ id, index }) {
@@ -50,7 +51,7 @@ function card({ id, index }) {
         className={['m-card', `--${pokemon.types[0]}`].join(' ')}
         key={index}
       >
-        <p>{pokemon.name}</p>
+        <p className="a-text --name">{pokemon.name}</p>
         <div>{displayTypes()}</div>
         <img src={pokemon.sprite} alt={pokemon.name} />
       </div>

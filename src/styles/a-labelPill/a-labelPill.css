@@ -1,4 +1,5 @@
 .a-labelPill {
+  font-family: 'Montserrat';
   margin: 0;
   text-transform: capitalize;
   border-radius: 2rem;
@@ -6,6 +7,7 @@
   padding: 0.3rem 1rem;
   color: white;
   font-weight: 600;
+  width: fit-content;
 
   &:not(:first-child) {
     margin-left: 0.5rem;
