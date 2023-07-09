@@ -8,7 +8,7 @@
   padding: 1rem 0.7rem;
   width: 12rem;
   height: 12rem;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(200, 200, 200);
   font-family: 'Montserrat';
   transition-duration: 200ms;
   cursor: pointer;
@@ -17,6 +17,8 @@
     margin: 0;
     padding: 0;
     text-transform: capitalize;
+    color: white;
+    font-weight: 700;
   }
 
   & > div {
@@ -33,5 +35,65 @@
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  &.--fire {
+    background-color: #eb7472;
+  }
+
+  &.--grass {
+    background-color: #72cdb2;
+  }
+
+  &.--water {
+    background-color: #83b9f3;
+  }
+
+  &.--electric {
+    background-color: #eccb71;
+  }
+
+  &.--bug {
+    background-color: #c5bf49;
+  }
+
+  &.--bug {
+    background-color: #c5bf49;
+  }
+
+  &.--poison {
+    background-color: #9c42ae;
+  }
+
+  &.--ground {
+    background-color: #d3b052;
+  }
+
+  &.--fairy {
+    background-color: #eca3eb;
+  }
+
+  &.--psychic {
+    background-color: #e873d3;
+  }
+
+  &.--fighting {
+    background-color: #ac5023;
+  }
+
+  &.--rock {
+    background-color: #a5937c;
+  }
+
+  &.--ghost {
+    background-color: #826fa4;
+  }
+
+  &.--ice {
+    background-color: #98d5e9;
+  }
+
+  &.--dragon {
+    background-color: #8463c2;
   }
 }

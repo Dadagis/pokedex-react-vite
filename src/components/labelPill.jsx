@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/a-labelPill/a-labelPill.css';
 
-function labelPill({ type, color, ...props }) {
+function labelPill({ type, ...props }) {
   return (
-    <p
-      key={props.key}
-      className="a-labelPill"
-      style={{ backgroundColor: color }}
-    >
+    <p key={props.key} className="a-labelPill">
       {type}
     </p>
   );

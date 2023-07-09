@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import '../styles/m-card/m-card.css';
 import LabelPill from './labelPill';
-import getTypeColor from '../services/typesColorBuilder';
 
 function card({ id, index }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
@@ -39,14 +38,18 @@ function card({ id, index }) {
   };
 
   const displayTypes = () => {
+    console.log(pokemon.types.first);
     return pokemon.types.map((type, index) => {
-      return <LabelPill key={index} type={type} color={getTypeColor(type)} />;
+      return <LabelPill key={index} type={type} />;
     });
   };
 
   return (
     loaded && (
-      <div className="m-card" key={index}>
+      <div
+        className={['m-card', `--${pokemon.types[0]}`].join(' ')}
+        key={index}
+      >
         <p>{pokemon.name}</p>
         <div>{displayTypes()}</div>
         <img src={pokemon.sprite} alt={pokemon.name} />
