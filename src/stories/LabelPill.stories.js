@@ -4,4 +4,8 @@ export default {
   component: labelPill,
 };
 
-export const Default = {};
+export const Default = {
+  args: {
+    type: 'Fire',
+  },
+};
