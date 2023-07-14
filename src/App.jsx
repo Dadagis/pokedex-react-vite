@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/header';
 import CardsList from './components/cardsList';
 import { useState } from 'react';
+import Pagination from './components/pagination';
 
 function App() {
   const [page, setPage] = useState(1);
@@ -15,8 +16,9 @@ function App() {
   return (
     <>
       <Header></Header>
-
-      <CardsList page={page} updatePage={updatePage}></CardsList>
+      <Pagination page={page} handleClick={updatePage}></Pagination>
+      <CardsList page={page}></CardsList>
+      <Pagination page={page} handleClick={updatePage}></Pagination>
     </>
   );
 }
