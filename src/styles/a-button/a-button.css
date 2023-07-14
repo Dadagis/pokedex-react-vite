@@ -2,10 +2,15 @@
   border-radius: 2rem;
   width: min-content;
   padding: 0.5rem 1rem;
-  background-color: #23568c;
+  background-color: #285f9a;
   cursor: pointer;
+  transition-duration: 100ms;
 
   &.--squared {
     border-radius: 0.3rem;
+  }
+
+  &:hover {
+    background-color: #3a77b9;
   }
 }
