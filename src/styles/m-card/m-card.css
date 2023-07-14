@@ -81,4 +81,34 @@
   &.--dragon {
     background: linear-gradient(120deg, #a98ed9, #8463c2);
   }
+
+  &.--loading {
+    > .m-card__nameSkeleton {
+      width: 7rem;
+      height: 1rem;
+      border-radius: 2rem;
+      background-color: #ebebeb;
+      flex-shrink: 0;
+    }
+
+    > .m-card__typeSkeleton {
+      width: 3rem;
+      height: 1rem;
+      border-radius: 2rem;
+      background-color: #ebebeb;
+      flex-shrink: 0;
+    }
+
+    > .m-card__imageSkeleton {
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 60%;
+      height: 60%;
+      background-color: #ebebeb;
+      justify-self: center;
+      align-self: center;
+      flex-shrink: 0;
+      border-radius: 0.3rem;
+    }
+  }
 }

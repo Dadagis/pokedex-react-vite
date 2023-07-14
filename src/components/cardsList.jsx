@@ -21,8 +21,8 @@ function cardsList({ page }) {
   return <div className="o-cardsList">{displayCards()}</div>;
 }
 
-cardsList.propTypes = {};
+cardsList.propTypes = { page: PropTypes.string };
 
-cardsList.defaultProps = {};
+cardsList.defaultProps = { page: '1' };
 
 export default cardsList;

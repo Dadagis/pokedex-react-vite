@@ -11,6 +11,9 @@ function card({ id, index }) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    console.log(id);
+    if (id < 1 || id === null) return;
+
     axios
       .get(`${baseUrl}/${id}`, {
         headers: {
@@ -44,17 +47,18 @@ function card({ id, index }) {
     });
   };
 
-  return (
-    loaded && (
-      <div
-        className={['m-card', `--${pokemon.types[0]}`].join(' ')}
-        key={index}
-      >
-        <p className="a-text --name">{pokemon.name}</p>
-        <div>{displayTypes()}</div>
-        <img src={pokemon.sprite} alt={pokemon.name} />
-      </div>
-    )
+  return loaded ? (
+    <div className={['m-card', `--${pokemon.types[0]}`].join(' ')} key={index}>
+      <p className="a-text --name">{pokemon.name}</p>
+      <div>{displayTypes()}</div>
+      <img src={pokemon.sprite} alt={pokemon.name} />
+    </div>
+  ) : (
+    <div className="m-card --loading" key={index}>
+      <div className="m-card__nameSkeleton"></div>
+      <div className="m-card__typeSkeleton"></div>
+      <div className="m-card__imageSkeleton"></div>
+    </div>
   );
 }
 

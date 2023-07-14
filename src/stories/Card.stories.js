@@ -6,3 +6,9 @@ export default {
 };
 
 export const Default = {};
+
+export const Loading = {
+  args: {
+    id: '',
+  },
+};

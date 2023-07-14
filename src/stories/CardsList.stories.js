@@ -5,4 +5,8 @@ export default {
   component: cardsList,
 };
 
-export const Default = {};
+export const Default = {
+  args: {
+    page: '1',
+  },
+};
