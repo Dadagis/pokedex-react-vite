@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/a-button/a-button.css';
 
-function button({ label, type }) {
+function button({ label, type, handleClick }) {
   const option = type === 'default' ? null : `--${type}`;
 
   return (
-    <div className={['a-button', option].join(' ')}>
+    <div className={['a-button', option].join(' ')} onClick={handleClick}>
       <span className="a-text --paginationButton">{label}</span>
     </div>
   );
@@ -14,7 +14,8 @@ function button({ label, type }) {
 
 button.propTypes = {
   label: PropTypes.string,
-  type: PropTypes.oneOf[('default', 'squared')],
+  type: PropTypes.oneOf(['default', 'squared']),
+  handleClick: PropTypes.func,
 };
 button.defaultProps = { label: 'Button', type: 'default' };
 

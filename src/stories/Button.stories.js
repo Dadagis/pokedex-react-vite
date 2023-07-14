@@ -13,7 +13,7 @@ export default {
 
 export const Default = {};
 
-export const Pagination = {
+export const Squared = {
   args: {
     label: '+',
     type: 'squared',

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './card';
 import '../styles/o-cardsList/o-cardsList.css';
+import Button from './button';
 function cardsList() {
   const [page, setPage] = useState(1);
   const [base, setBase] = useState(21);
@@ -28,8 +29,8 @@ function cardsList() {
   return (
     <div className="o-cardsList">
       {displayCards()}
-      <button onClick={() => updatePage()}>+</button>
-      <button onClick={() => updatePage(false)}>-</button>
+      <Button label="+" type="squared" handleClick={updatePage} />
+      <Button label="-" type="squared" handleClick={() => updatePage(false)} />
       {page}
     </div>
   );
