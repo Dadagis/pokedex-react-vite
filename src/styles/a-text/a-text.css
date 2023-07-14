@@ -10,4 +10,11 @@
     color: white;
     font-weight: 700;
   }
+
+  &.--paginationButton {
+    text-transform: capitalize;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
 }

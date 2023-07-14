@@ -1,0 +1,11 @@
+.a-button {
+  border-radius: 2rem;
+  width: min-content;
+  padding: 0.5rem 1rem;
+  background-color: #23568c;
+  cursor: pointer;
+
+  &.--squared {
+    border-radius: 0.3rem;
+  }
+}
