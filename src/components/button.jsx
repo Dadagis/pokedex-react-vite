@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/a-button/a-button.css';
+import '../styles/a-text/a-text.css';
 
 function button({ label, type, handleClick }) {
   const option = type === 'default' ? null : `--${type}`;
