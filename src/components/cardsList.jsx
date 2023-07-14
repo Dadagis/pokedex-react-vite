@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './card';
-
+import '../styles/o-cardsList/o-cardsList.css';
 function cardsList() {
   const [page, setPage] = useState(1);
-  const [base, setBase] = useState(20);
+  const [base, setBase] = useState(21);
   const [ids, setIds] = useState([...Array(base).keys()]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function cardsList() {
   };
 
   return (
-    <div>
+    <div className="o-cardsList">
       {displayCards()}
       <button onClick={() => updatePage()}>+</button>
       <button onClick={() => updatePage(false)}>-</button>

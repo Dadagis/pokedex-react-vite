@@ -1,0 +1,16 @@
+.o-cardsList {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: auto;
+  align-items: center;
+  justify-items: center;
+  gap: 0.8rem;
+}
+
+@media (min-width: 640px) {
+  .o-cardsList {
+    grid-template-columns: repeat(3, 1fr);
+    width: min-content;
+    margin: 0 auto;
+  }
+}
