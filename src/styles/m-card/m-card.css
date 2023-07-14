@@ -6,7 +6,7 @@
   padding: 1rem 0.7rem;
   width: 12rem;
   height: 12rem;
-  background-color: rgb(200, 200, 200);
+  background: linear-gradient(120deg, #d7d7d7, #c8c8c8);
   transition-duration: 200ms;
   cursor: pointer;
 
@@ -27,62 +27,58 @@
   }
 
   &.--fire {
-    background-color: #eb7472;
+    background: linear-gradient(120deg, #ea9d9b, #e16563);
   }
 
   &.--grass {
-    background-color: #72cdb2;
+    background: linear-gradient(120deg, #92e8ce, #67c9a7);
   }
 
   &.--water {
-    background-color: #83b9f3;
+    background: linear-gradient(120deg, #a0c3e8, #71abea);
   }
 
   &.--electric {
-    background-color: #eccb71;
+    background: linear-gradient(120deg, #eed694, #eac765);
   }
 
   &.--bug {
-    background-color: #c5bf49;
-  }
-
-  &.--bug {
-    background-color: #c5bf49;
+    background: linear-gradient(120deg, #d8d379, #c5bf49);
   }
 
   &.--poison {
-    background-color: #9c42ae;
+    background: linear-gradient(120deg, #df9aed, #9c42ae);
   }
 
   &.--ground {
-    background-color: #d3b052;
+    background: linear-gradient(120deg, #f0d487, #cca948);
   }
 
   &.--fairy {
-    background-color: #eca3eb;
+    background: linear-gradient(120deg, #f3b1f1, #df8edc);
   }
 
   &.--psychic {
-    background-color: #e873d3;
+    background: linear-gradient(120deg, #ed9dde, #e963d1);
   }
 
   &.--fighting {
-    background-color: #ac5023;
+    background: linear-gradient(120deg, #e18d62, #ac5023);
   }
 
   &.--rock {
-    background-color: #a5937c;
+    background: linear-gradient(120deg, #b9b2a7, #a08c6f);
   }
 
   &.--ghost {
-    background-color: #826fa4;
+    background: linear-gradient(120deg, #ac9dc1, #826fa4);
   }
 
   &.--ice {
-    background-color: #98d5e9;
+    background: linear-gradient(120deg, #b2deec, #90d3e9);
   }
 
   &.--dragon {
-    background-color: #8463c2;
+    background: linear-gradient(120deg, #a98ed9, #8463c2);
   }
 }

@@ -1,6 +1,7 @@
 import cardsList from '../components/cardsList';
 
 export default {
+  tags: ['autodocs'],
   component: cardsList,
 };
 
