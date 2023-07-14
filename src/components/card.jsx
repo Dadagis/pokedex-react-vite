@@ -11,7 +11,6 @@ function card({ id, index }) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    console.log(id);
     if (id < 1 || id === null) return;
 
     axios
