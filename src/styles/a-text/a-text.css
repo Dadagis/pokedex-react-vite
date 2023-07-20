@@ -11,6 +11,11 @@
     font-weight: 700;
   }
 
+  &.--stat {
+    color: white;
+    font-weight: 600;
+  }
+
   &.--paginationButton {
     text-transform: capitalize;
     color: white;

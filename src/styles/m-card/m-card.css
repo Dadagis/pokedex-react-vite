@@ -10,7 +10,7 @@
   transition-duration: 200ms;
   cursor: pointer;
 
-  & > div {
+  & div {
     font-size: 0.8rem;
     margin-top: 0.3rem;
     display: flex;
@@ -113,6 +113,27 @@
       align-self: center;
       flex-shrink: 0;
       border-radius: 0.3rem;
+    }
+  }
+
+  &.--large {
+    width: 20rem;
+    height: 10rem;
+    flex-direction: row;
+    gap: 1rem;
+
+    > div:first-of-type {
+      flex-direction: column;
+    }
+
+    > div.m-card__stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    & img {
+      align-self: flex-start;
     }
   }
 }

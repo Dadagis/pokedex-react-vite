@@ -5,7 +5,7 @@ import '../styles/m-card/m-card.css';
 import '../styles/a-text/a-text.css';
 import LabelPill from './labelPill';
 
-function card({ id, index }) {
+function card({ id, index, large }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
   const [pokemon, setPokemon] = useState({});
   const [loaded, setLoaded] = useState(false);
@@ -36,6 +36,9 @@ function card({ id, index }) {
           return pokeType.type.name;
         }),
       ],
+      baseExperience: data.base_experience,
+      height: data.height,
+      weight: data.weight,
     });
     setLoaded(true);
   };
@@ -46,22 +49,66 @@ function card({ id, index }) {
     });
   };
 
-  return loaded ? (
-    <div className={['m-card', `--${pokemon.types[0]}`].join(' ')} key={index}>
-      <p className="a-text --name">{pokemon.name}</p>
-      <div>{displayTypes()}</div>
-      <img src={pokemon.sprite} alt={pokemon.name} />
-    </div>
-  ) : (
+  if (loaded && large) {
+    return (
+      <div
+        className={['m-card', `--${pokemon.types[0]}`, '--large']
+          .join(' ')
+          .trim()}
+        key={index}
+      >
+        <div>
+          <p className="a-text --name">{pokemon.name}</p>
+          <div>{displayTypes()}</div>
+          <img src={pokemon.sprite} alt={pokemon.name} />
+        </div>
+        <div className="m-card__stats">
+          <p className="a-text --stat">{`Height : ${pokemon.height}`}</p>
+          <p className="a-text --stat">{`Weight : ${pokemon.weight}`}</p>
+          <p className="a-text --stat">{`Base Experience : ${pokemon.baseExperience}`}</p>
+        </div>
+      </div>
+    );
+  } else if (loaded) {
+    return (
+      <div
+        className={['m-card', `--${pokemon.types[0]}`].join(' ').trim()}
+        key={index}
+      >
+        <p className="a-text --name">{pokemon.name}</p>
+        <div>{displayTypes()}</div>
+        <img src={pokemon.sprite} alt={pokemon.name} />
+      </div>
+    );
+  } else {
     <div className="m-card --loading" key={index}>
       <div className="m-card__nameSkeleton"></div>
       <div className="m-card__typeSkeleton"></div>
       <div className="m-card__imageSkeleton"></div>
-    </div>
-  );
+    </div>;
+  }
+  // return loaded ? (
+  //   <div
+  //     className={['m-card', `--${pokemon.types[0]}`, size].join(' ').trim()}
+  //     key={index}
+  //   >
+  //     <p className="a-text --name">{pokemon.name}</p>
+  //     <div>{displayTypes()}</div>
+  //     <img src={pokemon.sprite} alt={pokemon.name} />
+  //     <div>
+  //       <p>salut</p>
+  //     </div>
+  //   </div>
+  // ) : (
+  //   <div className="m-card --loading" key={index}>
+  //     <div className="m-card__nameSkeleton"></div>
+  //     <div className="m-card__typeSkeleton"></div>
+  //     <div className="m-card__imageSkeleton"></div>
+  //   </div>
+  // );
 }
 
-card.propTypes = { id: PropTypes.number };
-card.defaultProps = { id: 1 };
+card.propTypes = { id: PropTypes.number, large: PropTypes.bool };
+card.defaultProps = { id: 1, large: false };
 
 export default card;
