@@ -23,7 +23,11 @@
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+
+    & img {
+      animation: hover-move 0.35s infinite;
+    }
   }
 
   &.--fire {
@@ -39,11 +43,11 @@
   }
 
   &.--electric {
-    background: linear-gradient(120deg, #eed694, #eac765);
+    background: linear-gradient(120deg, #f0da9d, #f0c85a);
   }
 
   &.--bug {
-    background: linear-gradient(120deg, #d8d379, #c5bf49);
+    background: linear-gradient(120deg, #d8d37d, #c3bc3e);
   }
 
   &.--poison {
@@ -51,7 +55,7 @@
   }
 
   &.--ground {
-    background: linear-gradient(120deg, #f0d487, #cca948);
+    background: linear-gradient(120deg, #e8cc82, #b29136);
   }
 
   &.--fairy {
@@ -110,5 +114,15 @@
       flex-shrink: 0;
       border-radius: 0.3rem;
     }
+  }
+}
+
+@keyframes hover-move {
+  50% {
+    transform: translateY(-0.3rem);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
