@@ -10,3 +10,10 @@ export const Default = {
     page: '1',
   },
 };
+
+export const LargeDisplay = {
+  args: {
+    page: '1',
+    largeDisplay: true,
+  },
+};

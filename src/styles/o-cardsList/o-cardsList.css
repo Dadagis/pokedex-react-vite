@@ -12,5 +12,9 @@
     grid-template-columns: repeat(3, 1fr);
     width: min-content;
     margin: 0 auto;
+
+    &.--large {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

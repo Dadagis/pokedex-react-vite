@@ -9,11 +9,13 @@
     text-transform: capitalize;
     color: white;
     font-weight: 700;
+    font-size: 1rem;
   }
 
   &.--stat {
     color: white;
     font-weight: 600;
+    font-size: 0.75rem;
   }
 
   &.--paginationButton {
