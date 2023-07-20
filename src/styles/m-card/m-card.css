@@ -118,7 +118,7 @@
 
   &.--large {
     width: 19rem;
-    height: 10rem;
+    height: 12rem;
     flex-direction: row;
     gap: 1rem;
     justify-content: space-between;

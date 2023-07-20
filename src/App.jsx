@@ -3,9 +3,11 @@ import Header from './components/header';
 import CardsList from './components/cardsList';
 import { useState } from 'react';
 import Pagination from './components/pagination';
+import SizeSelector from './components/sizeSelector';
 
 function App() {
   const [page, setPage] = useState(1);
+  const [largeDisplay, setLargeDisplay] = useState(false);
 
   const updatePage = (increment = true) => {
     if (page === 1 && !increment) return;
@@ -17,7 +19,8 @@ function App() {
     <>
       <Header></Header>
       <Pagination page={page} handleClick={updatePage}></Pagination>
-      <CardsList page={page}></CardsList>
+      <SizeSelector handleClick={setLargeDisplay} />
+      <CardsList page={page} largeDisplay={largeDisplay}></CardsList>
       <Pagination page={page} handleClick={updatePage}></Pagination>
     </>
   );
