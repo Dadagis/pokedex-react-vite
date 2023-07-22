@@ -1,0 +1,37 @@
+.m-sizeSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  width: min-content;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: #285f9a;
+    height: 1.7rem;
+    width: 1.7rem;
+    top: -0.1rem;
+    left: -0.1rem;
+    border-radius: 0.2rem;
+    transition: margin-left 200ms;
+  }
+
+  &.--large::before {
+    margin-left: 2rem;
+  }
+}
+
+.m-sizeSelector__option {
+  height: 1.5rem;
+  width: 1.5rem;
+  z-index: 1;
+
+  & > * {
+    pointer-events: none;
+  }
+
+  &.--selected * {
+    fill: white;
+  }
+}
