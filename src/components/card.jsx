@@ -10,6 +10,7 @@ function card({ id, index, large }) {
   const [pokemon, setPokemon] = useState({});
   const [loaded, setLoaded] = useState(false);
 
+  // TODO, refacto this part in a single service
   useEffect(() => {
     if (id < 1 || id === null) return;
 
@@ -27,6 +28,7 @@ function card({ id, index, large }) {
       });
   }, [id]);
 
+  // TODO, refacto this part in a single service
   const savePokemonDetails = (data) => {
     setPokemon({
       name: data.name,

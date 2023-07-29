@@ -1,11 +1,11 @@
-import './App.css';
+import './Index.css';
 import Header from './components/header';
 import CardsList from './components/cardsList';
 import { useState } from 'react';
 import Pagination from './components/pagination';
 import SizeSelector from './components/sizeSelector';
 
-function App() {
+function Index() {
   const [page, setPage] = useState(1);
   const [largeDisplay, setLargeDisplay] = useState(false);
 
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Index;
