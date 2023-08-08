@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../styles/m-card/m-card.css';
 import '../styles/a-text/a-text.css';
 import LabelPill from './labelPill';
+import { Link } from 'react-router-dom';
 
 function card({ id, index, large }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
@@ -53,34 +54,38 @@ function card({ id, index, large }) {
 
   if (loaded && large) {
     return (
-      <div
-        className={['m-card', `--${pokemon.types[0]}`, '--large']
-          .join(' ')
-          .trim()}
-        key={index}
-      >
-        <div>
+      <Link to={`pokemon/${id}`}>
+        <div
+          className={['m-card', `--${pokemon.types[0]}`, '--large']
+            .join(' ')
+            .trim()}
+          key={index}
+        >
+          <div>
+            <p className="a-text --name">{pokemon.name}</p>
+            <div>{displayTypes()}</div>
+            <img src={pokemon.sprite} alt={pokemon.name} />
+          </div>
+          <div className="m-card__stats">
+            <p className="a-text --stat">{`Height : ${pokemon.height}`}</p>
+            <p className="a-text --stat">{`Weight : ${pokemon.weight}`}</p>
+            <p className="a-text --stat">{`Base Experience : ${pokemon.baseExperience}`}</p>
+          </div>
+        </div>
+      </Link>
+    );
+  } else if (loaded) {
+    return (
+      <Link to={`pokemon/${id}`}>
+        <div
+          className={['m-card', `--${pokemon.types[0]}`].join(' ').trim()}
+          key={index}
+        >
           <p className="a-text --name">{pokemon.name}</p>
           <div>{displayTypes()}</div>
           <img src={pokemon.sprite} alt={pokemon.name} />
         </div>
-        <div className="m-card__stats">
-          <p className="a-text --stat">{`Height : ${pokemon.height}`}</p>
-          <p className="a-text --stat">{`Weight : ${pokemon.weight}`}</p>
-          <p className="a-text --stat">{`Base Experience : ${pokemon.baseExperience}`}</p>
-        </div>
-      </div>
-    );
-  } else if (loaded) {
-    return (
-      <div
-        className={['m-card', `--${pokemon.types[0]}`].join(' ').trim()}
-        key={index}
-      >
-        <p className="a-text --name">{pokemon.name}</p>
-        <div>{displayTypes()}</div>
-        <img src={pokemon.sprite} alt={pokemon.name} />
-      </div>
+      </Link>
     );
   } else {
     <div className="m-card --loading" key={index}>
@@ -89,25 +94,6 @@ function card({ id, index, large }) {
       <div className="m-card__imageSkeleton"></div>
     </div>;
   }
-  // return loaded ? (
-  //   <div
-  //     className={['m-card', `--${pokemon.types[0]}`, size].join(' ').trim()}
-  //     key={index}
-  //   >
-  //     <p className="a-text --name">{pokemon.name}</p>
-  //     <div>{displayTypes()}</div>
-  //     <img src={pokemon.sprite} alt={pokemon.name} />
-  //     <div>
-  //       <p>salut</p>
-  //     </div>
-  //   </div>
-  // ) : (
-  //   <div className="m-card --loading" key={index}>
-  //     <div className="m-card__nameSkeleton"></div>
-  //     <div className="m-card__typeSkeleton"></div>
-  //     <div className="m-card__imageSkeleton"></div>
-  //   </div>
-  // );
 }
 
 card.propTypes = { id: PropTypes.number, large: PropTypes.bool };
