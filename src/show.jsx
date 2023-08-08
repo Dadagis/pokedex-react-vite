@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from './components/header';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import DetailsContainer from './components/detailsContainer';
 
 function Show(props) {
   const [pokemon, setPokemon] = useState({});
@@ -49,7 +50,7 @@ function Show(props) {
   return (
     <>
       <Header />
-      <p>{pokemon.name}</p>
+      <DetailsContainer pokemon={pokemon} />
     </>
   );
 }
