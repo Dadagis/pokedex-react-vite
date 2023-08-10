@@ -6,6 +6,9 @@ function detailsContainer({ pokemon }) {
     <div>
       <p>{pokemon.name}</p>
       <img src={pokemon.sprite} alt={`Sprite of ${pokemon.name}`} />
+      <p>{pokemon.height}</p>
+      <p>{pokemon.weight}</p>
+      <p>{pokemon.types}</p>
     </div>
   );
 }

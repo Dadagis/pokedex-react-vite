@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import '../styles/m-card/m-card.css';
 import '../styles/a-text/a-text.css';
+import '../styles/a-link/a-link.css';
 import LabelPill from './labelPill';
 import { Link } from 'react-router-dom';
 
@@ -52,9 +53,11 @@ function card({ id, index, large }) {
     });
   };
 
+  console.log(pokemon);
+
   if (loaded && large) {
     return (
-      <Link to={`pokemon/${id}`}>
+      <Link to={`pokemon/${id}`} className="a-link">
         <div
           className={['m-card', `--${pokemon.types[0]}`, '--large']
             .join(' ')
@@ -76,7 +79,7 @@ function card({ id, index, large }) {
     );
   } else if (loaded) {
     return (
-      <Link to={`pokemon/${id}`}>
+      <Link to={`pokemon/${id}`} className="a-link">
         <div
           className={['m-card', `--${pokemon.types[0]}`].join(' ').trim()}
           key={index}
