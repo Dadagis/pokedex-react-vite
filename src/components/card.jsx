@@ -41,8 +41,8 @@ function card({ id, index, large }) {
         }),
       ],
       baseExperience: data.base_experience,
-      height: data.height,
-      weight: data.weight,
+      height: data.height / 10,
+      weight: data.weight / 10,
     });
     setLoaded(true);
   };
@@ -70,8 +70,8 @@ function card({ id, index, large }) {
             <img src={pokemon.sprite} alt={pokemon.name} />
           </div>
           <div className="m-card__stats">
-            <p className="a-text --stat">{`Height : ${pokemon.height}`}</p>
-            <p className="a-text --stat">{`Weight : ${pokemon.weight}`}</p>
+            <p className="a-text --stat">{`Height : ${pokemon.height}`} m</p>
+            <p className="a-text --stat">{`Weight : ${pokemon.weight}`} kg</p>
             <p className="a-text --stat">{`Base Experience : ${pokemon.baseExperience}`}</p>
           </div>
         </div>

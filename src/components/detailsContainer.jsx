@@ -22,8 +22,8 @@ function detailsContainer({ pokemon }) {
       </div>
       <div className="o-detailsContainer__types">{displayTypes()}</div>
       <div className="o-detailsContainer__stats">
-        <p>{pokemon.height}</p>
-        <p>{pokemon.weight}</p>
+        <p className="a-text">Height : {pokemon.height} m</p>
+        <p className="a-text">Weight : {pokemon.weight} kg</p>
       </div>
     </div>
   );
