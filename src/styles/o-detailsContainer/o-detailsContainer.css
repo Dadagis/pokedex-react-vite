@@ -1,4 +1,5 @@
 @import './__header/o-detailsContainer__header.css';
+@import './__types/o-detailsContainer__types.css';
 
 .o-detailsContainer {
   width: 50%;
