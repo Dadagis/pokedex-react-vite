@@ -53,8 +53,6 @@ function card({ id, index, large }) {
     });
   };
 
-  console.log(pokemon);
-
   if (loaded && large) {
     return (
       <Link to={`pokemon/${id}`} className="a-link">
