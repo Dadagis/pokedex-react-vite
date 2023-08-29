@@ -4,7 +4,9 @@
 
 .o-detailsContainer {
   width: 50%;
+  height: 90vh;
   border-radius: 1rem;
   box-shadow: 17px 18px 49px rgba(0, 0, 0, 0.07);
   overflow: hidden;
+  margin: 0 auto;
 }

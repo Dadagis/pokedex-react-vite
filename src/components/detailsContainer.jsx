@@ -65,6 +65,8 @@ function detailsContainer() {
       ...prevState,
       evolution_chain_url: data.evolution_chain.url,
       description: data.flavor_text_entries[0].flavor_text,
+      capture_rate: data.capture_rate,
+      base_happiness: data.base_happiness,
     }));
     setLoaded(true);
   };
@@ -90,6 +92,8 @@ function detailsContainer() {
         <div className="o-detailsContainer__stats">
           <p className="a-text">Height : {pokemon.height} m</p>
           <p className="a-text">Weight : {pokemon.weight} kg</p>
+          <p className="a-text">Capture_rate : {pokemon.capture_rate}</p>
+          <p className="a-text">Base_happiness : {pokemon.base_happiness}</p>
           <p className="a-text">Description : {pokemon.description}</p>
         </div>
       </div>
